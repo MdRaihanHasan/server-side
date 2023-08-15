@@ -29,10 +29,10 @@ class HomeController extends Controller
 
         if(!empty($domain_content)){
             // $domain_identity_id = $domain_content->id;
+
             return view('index', compact('domain_content'));
 
         } else {
-
             return response()->json(['message' => 'ektu pore asio'], 400);
         }
 
