@@ -28,12 +28,12 @@ class HomeController extends Controller
         $domain_content = User::where('domain', $currentUrl)->first();
 
         if(!empty($domain_content)){
-            $domain_identity_id = $domain_content->id;
+            // $domain_identity_id = $domain_content->id;
             return view('index', compact('domain_content'));
-            
+
         } else {
 
-            return response()->json(['message' => 'URL does not match'], 400);
+            return response()->json(['message' => 'ektu pore asio'], 400);
         }
 
     }
