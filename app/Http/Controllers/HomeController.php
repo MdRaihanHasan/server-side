@@ -33,7 +33,7 @@ class HomeController extends Controller
             return view('index', compact('domain_content'));
 
         } else {
-            return response()->json(['message' => 'ektu pore asio'], 400);
+            return response()->json(['message' => 'please input your domain name correctly on dashboard'], 400);
         }
 
     }

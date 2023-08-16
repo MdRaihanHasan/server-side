@@ -1,0 +1,5 @@
+{
+    "name"        : "Theme1",
+    "asset-path"  : "assets/theme1",
+    "extends"     : "PARENT_THEME"
+  }
