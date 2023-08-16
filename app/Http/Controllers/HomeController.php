@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Igaster\LaravelTheme\Facades\Theme;
 
 class HomeController extends Controller
 {
@@ -12,14 +13,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        //find id of domain from users table
-        // $domain = User::all();
-
-        // foreach ($domain as $user) {
-        //     $domain = $user->domain;
-        // }
-
-
 
         $currentUrl = $request->url();
 
@@ -30,6 +23,7 @@ class HomeController extends Controller
         if(!empty($domain_content)){
             // $domain_identity_id = $domain_content->id;
 
+            Theme::set($domain_content->domain_identity_id);
             return view('index', compact('domain_content'));
 
         } else {

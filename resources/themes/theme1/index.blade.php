@@ -116,7 +116,10 @@ https://templatemo.com/tm-568-digimedia
                   </div>
                   <div class="col-lg-12">
                     <div class="border-first-button scroll-to-section">
-                      <a href="#contact">Free Quote</a>
+                      <a href="#contact"><?php
+                        $domainName = $_SERVER['HTTP_HOST'];
+                        echo "Your domain name is: $domainName";
+                        ?></a>
                     </div>
                   </div>
                 </div>
