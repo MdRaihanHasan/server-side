@@ -32,12 +32,33 @@ class HomeController extends Controller
 
     }
 
+    public function show(Request $request)
+    {
+
+        $currentUrl = $request->url();
+
+        $currentUrl = parse_url($currentUrl, PHP_URL_HOST);
+
+        $domain_content = User::where('domain', $currentUrl)->first();
+
+        if(!empty($domain_content)){
+            // $domain_identity_id = $domain_content->id;
+
+            Theme::set($domain_content->domain_identity_id);
+            return view('show', compact('domain_content'));
+
+        } else {
+            return response()->json(['message' => 'please input your domain name correctly on dashboard'], 400);
+        }
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -51,10 +72,6 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Home $home)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

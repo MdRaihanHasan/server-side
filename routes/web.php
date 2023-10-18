@@ -17,9 +17,10 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/show', [HomeController::class, 'show'])->name('show');
+
+
+
 // Route::get('/one', function () {
 //     return view('homepage_1');
 // });
